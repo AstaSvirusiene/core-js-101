@@ -131,8 +131,11 @@ function repeatString(value, count) {
  *   'I like legends', 'end' => 'I like legs',
  *   'ABABAB','BA' => 'ABAB'
  */
-function removeFirstOccurrences(/* str, value */) {
-  throw new Error('Not implemented');
+function removeFirstOccurrences(str, value) {
+  let newStr = '';
+  newStr = str.substring(0, str.indexOf(value))
+  + str.substring(str.indexOf(value) + value.length, str.length);
+  return newStr;
 }
 
 /**
@@ -207,8 +210,12 @@ function extractEmails(str) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleString(width, height) {
+  let rectangle='';
+  if (width > 1 && height > 1);
+    rectangle += '
+
+
 }
 
 
@@ -228,9 +235,21 @@ function getRectangleString(/* width, height */) {
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
  */
-function encodeToRot13(/* str */) {
-  throw new Error('Not implemented');
+function encodeToRot13(str) {
+  let newStr = '';
+  for (let i = 0; i < str.length; i += 1) {
+    let asciiCode = (str.charCodeAt(i) + 13);
+    if (asciiCode > 122 || ((str.charCodeAt(i) > 64 && str.charCodeAt(i) < 91) && asciiCode > 90)) {
+      asciiCode -= 26;
+    }
+    if (str.charCodeAt(i) < 65) {
+      asciiCode = str.charCodeAt(i);
+    }
+    newStr = newStr.concat(String.fromCharCode(asciiCode));
+  }
+  return newStr;
 }
+
 
 /**
  * Returns true if the value is string; otherwise false.
@@ -274,8 +293,12 @@ function isString(/* value */) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  throw new Error('Not implemented');
+function getCardId(value) {
+  const arr = ['A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣',
+    'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦',
+    'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥',
+    'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'];
+  return arr.indexOf(value);
 }
 
 
