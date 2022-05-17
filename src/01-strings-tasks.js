@@ -209,13 +209,9 @@ function extractEmails(str) {
  *  (12,3) =>  '│          │\n'+
  *             '└──────────┘\n'
  *
- */
-function getRectangleString(width, height) {
-  let rectangle='';
-  if (width > 1 && height > 1);
-    rectangle += '
-
-
+*/
+function getRectangleString(/* width, height */) {
+  throw new Error('Not implemented');
 }
 
 
