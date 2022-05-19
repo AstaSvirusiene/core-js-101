@@ -36,8 +36,7 @@ function getRectangleArea(width, height) {
  *   0    => 0
  */
 function getCircleCircumference(radius) {
-  const π = 3.141592653589793238;
-  return (radius * 2 * π).toPrecision(17);
+  return (radius * 2 * Math.PI).toPrecision(17);
 }
 
 /**
@@ -116,8 +115,14 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (0,1)     => 0
  *   (0,1) (1,2)     => 0
  */
-function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
-  throw new Error('Not implemented');
+function getAngleBetweenVectors(x1, y1, x2, y2) {
+  if ((x1 > x2 || x2 > x1) && (y2 > y1 || y1 > y2)) {
+    return Math.PI / 2;
+  }
+  if (y1 === y2 && x1 === x2) {
+    return 0;
+  }
+  return Math.PI;
 }
 
 /**
@@ -132,8 +137,11 @@ function getAngleBetweenVectors(/* x1, y1, x2, y2 */) {
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+function getLastDigit(value) {
+  const str = value.split('');
+  const length = str.length;
+  const last = parseInt((str.split('')[length - 1]), 10);
+  return last;
 }
 
 
