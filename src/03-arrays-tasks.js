@@ -54,9 +54,7 @@ function generateOdds(len) {
  *    [] => []
  */
 function doubleArray(arr) {
-  let array = [arr];
-  array = array.split(',').map((element) => `${element},${element}`);
-  return array;
+  return arr.concat(arr);
 }
 
 
@@ -86,9 +84,10 @@ function getArrayOfPositives(arr) {
  *    [ 1, 2, 3, 4, 5 ] => []
  *    [ 'cat, 'dog', 'raccoon' ] => [ 'cat', 'dog', 'raccoon' ]
  */
-function getArrayOfStrings(/* arr */) {
-  throw new Error('Not implemented');
+function getArrayOfStrings(arr) {
+  return arr.filter((element) => (typeof (element) === 'string'));
 }
+
 
 /**
  * Removes falsy values from the specified array
