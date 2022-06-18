@@ -53,15 +53,16 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-  const factorial = 1;
+  let factorialAnswer = 1;
+  let i = n;
   if (n === 1) {
-    return factorial * n;
+    return factorialAnswer * i;
   }
   if (n > 1) {
-    for (let i = 0; n > i; i += 1) {
-      factorial *= n;
+    for (let y = 1; i > y; i -= 1) {
+      factorialAnswer *= i;
     }
-    return factorial;
+    return factorialAnswer;
   }
   return 0;
 }
